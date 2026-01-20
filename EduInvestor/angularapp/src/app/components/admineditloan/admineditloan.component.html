@@ -1,0 +1,65 @@
+<div class="container">
+    <form class="loan-form" #editLoan="ngForm" (ngSubmit)="updateLoan()">
+        <h3>Edit Loan</h3>
+        <div class="form-group">
+            <label for="loanType">Loan Type<span style="color:red">*</span></label>
+            <input type="text" name="loanType" id="loanType" required [(ngModel)]="newLoan.loanType" #loanType="ngModel">
+            <div class="error-message" *ngIf="loanType.touched && loanType.invalid">
+                Loan Type is Required
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="description">Description<span style="color:red">*</span></label>
+            <input type="text" name="description" id="description" required [(ngModel)]="newLoan.description" #description="ngModel">
+            <div class="error-message" *ngIf="description.touched && description.invalid">
+                Description is Required
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="interestRate">Interest Rate<span style="color:red">*</span></label>
+            <input type="text" name="interestRate" id="interestRate" required [(ngModel)]="newLoan.interestRate" #interestRate="ngModel">
+            <div class="error-message" *ngIf="interestRate.touched && interestRate.invalid">
+                Interest Rate is Required
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="maximumAmount">Maximum Amount<span style="color:red">*</span></label>
+            <input type="text" name="maximumAmount" id="maximumAmount" required [(ngModel)]="newLoan.maximumAmount" #maximumAmount="ngModel">
+            <div class="error-message" *ngIf="maximumAmount.touched && maximumAmount.invalid">
+                Maximum Amount is Required
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="repaymentTenure">Repayment Tenure<span style="color:red">*</span></label>
+            <input type="text" name="repaymentTenure" id="repaymentTenure" required [(ngModel)]="newLoan.repaymentTenure" #repaymentTenure="ngModel">
+            <div class="error-message" *ngIf="repaymentTenure.touched && repaymentTenure.invalid">
+                Repayment Tenure is Required
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="eligibility">Eligibility<span style="color:red">*</span></label>
+            <input type="text" name="eligibility" id="eligibility" required [(ngModel)]="newLoan.eligibility" #eligibility="ngModel">
+            <div class="error-message" *ngIf="eligibility.touched && eligibility.invalid">
+                Eligibility is Required
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="documentsRequired">Documents Required<span style="color:red">*</span></label>
+            <input type="text" name="documentsRequired" id="documentsRequired" required [(ngModel)]="newLoan.documentsRequired" #documentsRequired="ngModel">
+            <div class="error-message" *ngIf="documentsRequired.touched && documentsRequired.invalid">
+                Documents Required is Required
+            </div>
+        </div>
+        <div>
+            <button type="submit" (click)="updateLoan()">Update Loan</button>
+            <button class="btn btn-primary" type="button" (click)="BackToViewLoan()">Back</button>
+        </div>
+
+        <div *ngIf="showPopup" id="popup" class="popup">
+            <div class="popup-content">
+                <h2>Successfully Updated!</h2>
+                <button (click)="closePopup()">OK</button>
+            </div>
+        </div>
+    </form>
+</div>

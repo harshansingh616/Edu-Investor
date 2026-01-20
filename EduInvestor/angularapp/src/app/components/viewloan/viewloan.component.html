@@ -1,0 +1,50 @@
+<div class="view-loan-container">
+    <h1>Edu Loans</h1>
+    <hr class="horizontal-bar">
+    <input class="form-group" type="text" placeholder="Search..." [(ngModel)]= "searchText" (input)= "filterloan()">  
+    <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <th>S.No</th>
+          <th>Loan Type</th>
+          <th>Maximum Amount</th>
+          <th>Interest Rate</th>
+          <th>Repayment Tenure</th>
+          <th>Eligibility</th>
+          <th>Documents Required</th>
+          <th>Description</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let loan of filteredLoans; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ loan.loanType }}</td>
+          <td>{{ loan.maximumAmount }}</td>
+          <td>{{ loan.interestRate }}</td>
+          <td>{{ loan.repaymentTenure }}</td>
+          <td>{{ loan.eligibility }}</td>
+          <td>{{ loan.documentsRequired }}</td>
+          <td>{{ loan.description }}</td>
+          <td>
+
+            <button type="button" class="edit-button" (click)="editLoan(loan.loanId)">Edit</button>
+            <button type="button" class="btn-delete" (click)="onConfirm(loan.loanId)">Delete</button>
+
+          </td>
+        </tr>
+      </tbody>
+    </table>
+</div>
+<div class="popup" *ngIf= "showPopup">
+  <div class="popup-content">
+    <span class="close" (click)="closePopup()"></span>
+    <h2>Confirm Deletion</h2>
+    <p>Are you sure you want to delete this item?</p>
+    
+    <button (click)="deleteLoan()">Delete</button>
+    <button (click)="closePopup()">Cancel</button>
+  </div>
+
+</div>
+

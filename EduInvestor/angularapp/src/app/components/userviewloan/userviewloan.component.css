@@ -1,0 +1,112 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #2e2e2e; /* Darker background color */
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    color: rgb(27, 27, 230);
+}
+
+.table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(244, 225, 225, 0.1);
+}
+
+input {
+    width: 300px;
+    margin-left: 60px;
+}
+
+.table thead {
+    background-color: #5050bd;
+    color: #fff;
+}
+
+.table th, .table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f9f9f9;
+}
+
+.table-hover tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+.view-loan-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.horizontal-bar {
+    border: 1;
+    height: 0.01px;
+    background: #6a6af1;
+    margin: 50px 0;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+.table, .table th, .table td {
+    border: 1px solid #ddd; /* Adds border to table, table headers, and table cells */
+}
+
+input {
+    width: 300px;
+    margin-left: 95px;
+}
+
+.table thead {
+    background-color: #2121b3;
+    color: #fff;
+}
+
+.table th, .table td {
+    padding: 12px 15px;
+    text-align: left;
+}
+
+.table-hover tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+
+
+
+button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+}

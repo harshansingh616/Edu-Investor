@@ -1,0 +1,42 @@
+<div class="user-view-container">
+    <h2>Available Educational Loans</h2>
+    <hr class="horizontal-bar">
+    <div class="search-bar">
+        <input class="form-group" type="text" placeholder="Search" [(ngModel)]= "searchText" (input)="filterloan()">
+    </div>
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>S.No</th>
+                <th>Loan Type</th>
+                <th>Loan Description</th>
+                <th>Interest Rate</th>
+                <th>Maximum Amount</th>
+                <th>Repayment Tenure</th>
+                <th>Eligibility</th>
+                <th>Documents Required</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let edu of eduloan; let i = index">
+                <td>{{i+1}}</td>
+                <td>{{edu.loanType}}</td>
+                <td>{{edu.description}}</td>
+                <td>{{edu.interestRate}}</td>
+                <td>{{edu.maximumAmount}}</td>
+                <td>{{edu.repaymentTenure}}</td>
+                <td>{{edu.eligibility}}</td>
+                <td>{{edu.documentsRequired}}</td>
+                <td>
+                    <div *ngIf="selectedLoan !== edu">
+                        <button [disabled]="disableApplyButton(edu.loanId)" class="btn btn-info apply-button" (click)="applyLoan(edu.loanId)">Apply</button>
+                    </div>
+                    <div *ngIf="selectedLoan === edu">
+                        <button disabled class="btn btn-info applied-button">Applied</button>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

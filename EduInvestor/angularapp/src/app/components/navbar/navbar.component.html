@@ -1,0 +1,22 @@
+<body>
+    <!-- Regular Navbar for non-logged-in users -->
+    <nav class="navbar" *ngIf="!isLoggedIn()">
+      <h2 class="navbar-title">EduInvestor</h2>
+      <div class="links">
+        <a routerLink="/register">Register</a>
+        <a routerLink="/login">Login</a>
+      </div>
+    </nav>
+
+    <!-- Admin Navbar for logged-in admin users -->
+    <nav *ngIf="isAdmin()" class="admin-navbar">
+      <app-adminnav></app-adminnav>
+    </nav>
+
+    <!-- User Navbar for logged-in regular users -->
+    <nav *ngIf="isUser()" class="user-navbar">
+      <app-usernav></app-usernav>
+    </nav>
+    
+  </body>
+

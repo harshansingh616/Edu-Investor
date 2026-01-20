@@ -1,0 +1,114 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    padding: 30px 40px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+h2 {
+    font-size: 1.8em;
+    color: #333;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+form div {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 100%; /* Full width for vertical layout */
+    position: relative;
+}
+
+label {
+    font-size: 1em;
+    color: #333;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    color: #333;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+select:focus {
+    border-color: #ff9800; /* Orange color for focus */
+    box-shadow: 0 0 8px rgba(255, 152, 0, 0.3);
+    outline: none;
+}
+
+.error-message {
+    color: #d9534f; /* Red color for error messages */
+    font-size: 0.9em;
+    margin-top: 5px;
+    position: absolute;
+    bottom: -20px; /* Adjust position to be below the input */
+    left: 0;
+    width: 100%;
+}
+
+button[type="submit"] {
+    background-color: purple; /* Orange color */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+}
+
+button[type="submit"]:hover {
+    background-color: #800050; /* Darker orange for hover effect */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.error {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 5px;
+    position: absolute;
+    bottom: -5px; /* Adjust position to be below the input */
+    left: 0;
+    width: 120%;
+}

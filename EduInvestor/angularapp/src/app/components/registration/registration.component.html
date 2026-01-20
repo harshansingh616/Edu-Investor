@@ -1,0 +1,60 @@
+<div class="form-container">
+    <h2>Registration</h2>
+    <form #registrationForm="ngForm" (ngSubmit)="register()">
+        <div>
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" [(ngModel)]= "user.username" required #Username="ngModel">
+            <div class="error-message" *ngIf= "Username.invalid && Username.touched" style="color: red;">
+                *Username is required
+            </div>
+        </div>
+        <div>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" [(ngModel)]= "user.email" required #Email="ngModel">
+            <div class="error-message" *ngIf= "Email.invalid && Email.touched" style="color: red;">
+                *Please enter a valid email
+            </div>
+        </div>
+        <div>
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" [(ngModel)]= "user.password" required #Password="ngModel">
+            <div class="error-message" *ngIf= "Password.invalid && Password.touched" style="color: red;">
+                *Password must include at least one uppercase letter, one lowercase letter, one digit,
+                and one special character
+            </div>
+        </div>
+        <div>
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" required  ngModel #confirmPassword= "ngModel">
+            <div class="error-message" *ngIf= "confirmPassword.invalid && confirmPassword.touched" style="color: red;">
+                *Password do not match
+            </div>
+            <div *ngIf="Password.value!== confirmPassword.value">
+                Passwords do not match
+            </div>
+        </div>
+        <div>
+            <label for="mobileNumber">Mobile Number</label>
+            <input type="text" id="mobileNumber" name="mobileNumber" [(ngModel)]= "user.mobileNumber" required #MobileNumber="ngModel">
+            <div class="error-message" *ngIf= "MobileNumber.invalid && MobileNumber.touched" style="color: red;">
+                *Mobile number must be 10 digits
+            </div>
+        </div>
+        <div>
+            <label for="role">Role</label>
+            <select id="role" name="role" [(ngModel)]= "user.userRole" required #UserRole="ngModel">
+                <option value="User">User</option>
+                <option value="Admin">Admin</option>
+            </select>
+            <div class="error-message" *ngIf= "UserRole.invalid && UserRole.touched" style="color: red;">
+                *Role is required
+            </div>
+        </div>
+        <button type="submit">Register</button>
+    </form>
+    <div class="popup" *ngIf="showPopup">
+        <div class="popup-content">
+        <h2>Registration Successful!</h2>
+        <button (click)="closePopup()">Ok</button>
+    </div>
+</div>   

@@ -1,0 +1,39 @@
+<div class="request-container">
+    <h2>Loan Requests for Approval</h2>
+    <hr class="horizontal-bar">
+    <input class="form-group" type="text" placeholder="Search..." [(ngModel)]= "searchText" (input)= "filterloan()">  
+    <div>
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>S.No</th>
+                    <th>Loan Type</th>
+                    <th>Submission Date</th>
+                    <th>Institution</th>
+                    <th>Course</th>
+                    <th>Tuition Fee</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let la of appliedLoans;let i = index">
+                    <td>{{i+1}}</td>
+                    <td>{{la.loan.loanType}}</td>
+                    <td>{{la.submissionDate}}</td>
+                    <td>{{la.institution}}</td>
+                    <td>{{la.course}}</td>
+                    <td>{{la.tuitionFee}}</td>
+                    <td *ngIf="la.loanStatus===1">Approve</td>
+                    <td *ngIf="la.loanStatus===0">Pending</td>
+                    <td *ngIf="la.loanStatus===2">Reject</td>
+                    <td>
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" id="file-preview"(click)="showCustomData(la)">Validate</button> 
+                        <button *ngIf="la.loanStatus !==1" type="button" (click)="changeStatus('Approve', la)" class="btn btn-primary" style="background-color: green;color: white;">Approve</button>
+                        <button  type="button" (click)="changeStatus('Reject', la)" class="btn btn-primary" style="background-color: red; color: white;">Reject </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

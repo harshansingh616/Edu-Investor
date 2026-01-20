@@ -1,0 +1,77 @@
+
+.request-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.horizontal-bar {
+    border: 10;
+    height: 0.09px;
+    background: #6a6af1;
+    margin: 50px 0;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+ 
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+ 
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 20px;
+    color: rgb(82, 67, 105);
+}
+
+.table, .table th, .table td {
+    border: 1px solid #ddd; /* Adds border to table, table headers, and table cells */
+}
+
+.table {
+    width: 85%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(244, 225, 225, 0.1);
+}
+input{
+    
+    width: 300px;
+    margin-left: 95px;
+
+}
+
+.table thead {
+    background-color: #2121b3;
+    color: #fff;
+}
+
+.table th, .table td {
+    padding: 12px 15px;
+    text-align: left;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f9f9f9;
+}
+
+.table-hover tbody tr:hover {
+    background-color: #f1f1f1;
+}

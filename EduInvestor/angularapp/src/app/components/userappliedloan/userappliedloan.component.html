@@ -1,0 +1,42 @@
+<div>
+  <h2>Applied Loans</h2>
+
+  <input type="text" [(ngModel)]="searchTerm" (input)="searchLoan()">
+
+  <p *ngIf="appliedLoans.length==0">Oops! No records found</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Loan ID</th>
+        <th>Loan Name</th>
+        <th>Submission Date</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let list of appliedLoans;let i = index">
+        <td>{{ i+1}}</td>
+        <td>{{ list.loan.loanType }}</td>
+        <td>{{ list.submissionDate }}</td>
+        <td *ngIf="list.loanStatus===1">Approve</td>
+        <td *ngIf="list.loanStatus===0">Pending</td>
+        <td *ngIf="list.loanStatus===2">Reject</td>
+        <td>
+          <button type="button" (click)="onConfirm(list.loanApplicationId)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="popup" *ngIf="showPopup">
+  <div class="popup-content">
+    <span class="close" (click)="closePopup()"></span>
+    <h2>Confirm Deletion</h2>
+    <p>Are you sure you want to delete this Application?</p>
+
+    <button (click)="deleteLoan()">Delete</button>
+    <button (click)="closePopup()">Cancel</button>
+  </div>
+</div>

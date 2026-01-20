@@ -1,0 +1,57 @@
+<div class="loan-form-container">
+    <form [formGroup]="loanForm" (ngSubmit)="onSubmit()" class="loan-form">
+      <h1>Loan Application Form</h1>
+      <div class="form-group">
+        <label for="institution">Institution<span style="color:red">*</span></label>
+        <input type="text" id="institution" formControlName="institution" required>
+        <div class="error-message" *ngIf="loanForm.get('institution').touched && loanForm.get('institution').invalid">
+          *Institution is required
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="course">Course<span style="color:red">*</span></label>
+        <input type="text" id="course" formControlName="course" required>
+        <div class="error-message" *ngIf="loanForm.get('course').touched && loanForm.get('course').invalid">
+          *Course is required
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="tuitionFee">Tuition Fee<span style="color:red">*</span></label>
+        <input type="number" id="tuitionFee" formControlName="tuitionFee" required>
+        <div class="error-message" *ngIf="loanForm.get('tuitionFee').touched && loanForm.get('tuitionFee').invalid">
+          *Tuition Fees is required
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="address">Address<span style="color:red">*</span></label>
+        <input type="text" id="address" formControlName="address" required>
+        <div class="error-message" *ngIf="loanForm.get('address').touched && loanForm.get('address').invalid">
+          *Address is required
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="file-upload">Proof<span class="required">*</span></label>
+        <input type="file" id="file-upload" (change)="handleFileInput($event)">
+        <span id="file-chosen">{{ newLoanApplication.file || 'No file chosen' }}</span>
+      </div>
+  
+      <div *ngIf="formSubmitted && !loanForm.valid" class="validation-message">
+        <p>All fields are required</p>
+      </div>
+  
+      <div class="button-group">
+        <button type="button" (click)="Back()">Back</button>
+        <button type="submit" [disabled]="!loanForm.valid">Submit</button>
+      </div>
+  
+      <div *ngIf="showPopup" class="popup">
+        <p>Loan application submitted successfully!</p>
+        <button (click)="close()">Close</button>
+      </div>
+    </form>
+  </div>
+  
